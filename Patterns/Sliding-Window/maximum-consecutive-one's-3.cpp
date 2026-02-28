@@ -1,4 +1,4 @@
-Brute
+//! Brute
 class Solution {
 public:
     int longestOnes(vector<int>& arr, int k) {
@@ -24,7 +24,7 @@ public:
     }
 };
 
-Better
+//! Better
 class Solution {
 public:
     int longestOnes(vector<int>& arr, int k) {
@@ -49,7 +49,7 @@ public:
     }
 };
 
-Best
+//! Best
 class Solution {
 public:
     int longestOnes(vector<int>& arr, int k) {
@@ -76,3 +76,5 @@ public:
         return maxLen;  
     }
 };
+
+
