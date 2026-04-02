@@ -14,7 +14,6 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right)
         : val(x), left(left), right(right) {}
 };
-
 class Solution {
 private:
     TreeNode* first;
