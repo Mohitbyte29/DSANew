@@ -26,23 +26,23 @@ class MyHeap{
 
         void Heapify(int index){
             int largest = index;
-            int leftChildIndex = 2 * index + 1;
-            int rightChildIndex = 2 * index + 2;
-            if(leftChildIndex < heapSize && heap[leftChildIndex] > heap[largest]){
-                largest = leftChildIndex;
+            int left = 2*index + 1;
+            int right = 2*index + 2;
+            if(left < heapSize && heap[left] > heap[largest]){
+                largest = left;
             }
-            if(rightChildIndex < heapSize && heap[rightChildIndex] > heap[largest]){
-                largest = rightChildIndex;
+            if(right < heapSize && heap[right] > heap[largest]){
+                largest = right;
             }
             if(largest != index){
-                swap(index, largest);
+                swap(largest, index);
                 Heapify(largest);
             }
         }
 
         void buildTree(){
-            for(int index = heapSize/2 - 1; index >= 0; index--){
-                Heapify(index);
+            for(int i = heapSize/2 - 1; i >= 0; i--){
+                Heapify(i);
             }
         }
 
@@ -52,11 +52,12 @@ class MyHeap{
             }
             cout<<endl;
         }
+
 };
 
 int main(){
-    int arr[] = {10, 5, 20, 6, 11};
-    int n = 5;
+    int arr[] = {10, 20, 30, 15, 5, 18};
+    int n = 6;
     MyHeap heap(arr, n);
     heap.buildTree();
     heap.printTree();
