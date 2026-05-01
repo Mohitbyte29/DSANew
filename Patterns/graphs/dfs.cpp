@@ -19,7 +19,7 @@ vector<int> dfs(vector<vector<int>> &adj) {
     vector<int> visited(V, 0);
     vector<int> result;
 
-    dfsHelper(0, adj, visited, result);  // start from node 0
+    dfsHelper(0, adj, visited, result);  
     return result;
 }
 
