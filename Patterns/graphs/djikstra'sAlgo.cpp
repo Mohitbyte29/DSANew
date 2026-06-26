@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<int> dijkstra(int V, vector<vector<int>> &edges, int s) {
 
-
         priority_queue<pair<int,int>,
         vector<pair<int,int>>,
         greater<pair<int,int>>> pq;
