@@ -5,7 +5,7 @@ public:
         int n = heights.size();
         int m = heights[0].size();
 
-        vector<vector<int>> dist(n, vector<int>(m, 1e9));
+        vector<vector<int>> dist(n, vector<int>(m, INT_MAX));
         dist[0][0] = 0;
         pq.push({0, {0, 0}});
         int dr[] = {0, -1, 0, 1};
