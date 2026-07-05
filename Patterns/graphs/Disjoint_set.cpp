@@ -11,7 +11,7 @@ class DisjointSet{
             size.resize(n + 1);
             for(int i = 0; i<n; i++){
                 parent[i] = i;
-                size[i] = i;
+                size[i] = 1;
             }
         }
 
@@ -39,8 +39,8 @@ class DisjointSet{
         }
 
         void unionBySize(int u, int v){
-            int ult_u = u;
-            int ult_v = v;
+            int ult_u = findPar(u);
+            int ult_v = findPar(v);
             if(ult_u == ult_v) return;
             if(size[ult_u] < size[ult_v]){
                 parent[ult_u] = ult_v;
