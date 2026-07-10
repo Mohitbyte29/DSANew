@@ -1,4 +1,8 @@
-By memoization
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+// By memoization
 class Solution {
     int f(int day, int last, vector<vector<int>>& mat, vector<vector<int>>& dp){
         if(day == 0){
@@ -30,7 +34,7 @@ class Solution {
     }
 };
 
-By tabulation
+//! By tabulation
 class Solution {
   public:
     int maximumPoints(vector<vector<int>>& mat) {
@@ -57,7 +61,7 @@ class Solution {
     }
 };
 
-Space Optimization
+//! Space Optimization
 class Solution {
   public:
     int maximumPoints(vector<vector<int>>& mat) {
