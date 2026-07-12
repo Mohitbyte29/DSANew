@@ -9,7 +9,6 @@ int main(){
     for(int i = 0; i<n; i++){
         cin>>arr[i];
     }
-
     // pre-compute
     map<int, int> mpp;
     for(int i = 0; i<n; i++){
