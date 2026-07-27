@@ -40,7 +40,7 @@ public:
                               + dp[i][k]
                               + dp[k + 1][j];
 
-                    mini = min(mini, steps);
+                    mini = min(mini, steps)
                 }
 
                 dp[i][j] = mini;
