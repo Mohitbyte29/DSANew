@@ -8,7 +8,7 @@ public:
 
         for (int i = 0; i <= n - m; i++) {
             int j = 0;
-
+                
             while (j < m && txt[i + j] == pat[j]) {
                 j++;
             }
