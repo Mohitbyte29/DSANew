@@ -1,4 +1,12 @@
-vector<int> ans;
+#include <vector>
+#include <queue>
+#include <map>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> bottomView(TreeNode* root) {
+        vector<int> ans;
         if(root == NULL) return ans;
         queue<pair<TreeNode*, int>> q;
         map<int, int> mpp;
