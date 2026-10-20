@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 class Solution {
 public:
     string multiply(string a, string b) {
