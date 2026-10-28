@@ -17,7 +17,7 @@ public:
             } else if (!st.empty()) {  
                 st.pop();
                 cnt++;
-            }
+            }   
             j--;
         }
         return cnt;
