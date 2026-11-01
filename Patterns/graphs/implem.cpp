@@ -29,24 +29,48 @@ using namespace std;
 
 //* Weighted Graph
 
+// int main(){
+//     int V = 6;
+//     vector<vector<pair<int, int>>> adj(V + 1);
+//     adj[1].push_back({4, 3});
+//     adj[4].push_back({6, 2});
+//     adj[4].push_back({2, 2});
+//     adj[4].push_back({1, 3});
+//     adj[2].push_back({4, 2});
+//     adj[2].push_back({3, 1});
+//     adj[2].push_back({5, 0});
+//     adj[3].push_back({2, 1});
+//     adj[5].push_back({2, 0});
+//     adj[6].push_back({4, 2});
+
+//     for(int i = 1; i < V + 1; i++){
+//         cout << i << " -> ";
+//         for(auto neighbour : adj[i]){
+//             cout<< "{" << neighbour.first << ", " << neighbour.second << "}";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+//* Adjacency matrix
 int main(){
     int V = 6;
-    vector<vector<pair<int, int>>> adj(V + 1);
-    adj[1].push_back({4, 3});
-    adj[4].push_back({6, 2});
-    adj[4].push_back({2, 2});
-    adj[4].push_back({1, 3});
-    adj[2].push_back({4, 2});
-    adj[2].push_back({3, 1});
-    adj[2].push_back({5, 0});
-    adj[3].push_back({2, 1});
-    adj[5].push_back({2, 0});
-    adj[6].push_back({4, 2});
+    vector<vector<int>> adj(V + 1, vector<int> (V + 1, 0));
+    adj[1][4] = 3;
+    adj[2][3] = 1;
+    adj[2][4] = 2;
+    adj[4][2] = 2;
+    adj[3][2] = 1;
+    adj[4][1] = 3;
+    adj[4][6] = 2;
+    adj[6][4] = 2;
+    adj[5][2] = 0;
+    adj[2][5] = 0;
 
     for(int i = 1; i < V + 1; i++){
         cout << i << " -> ";
-        for(auto neighbour : adj[i]){
-            cout<< "{" << neighbour.first << ", " << neighbour.second << "}";
+        for(int j = 1; j < V + 1; j++){
+             cout<<adj[i][j] << " ";
         }
         cout<<endl;
     }
