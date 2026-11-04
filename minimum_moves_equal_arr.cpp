@@ -9,5 +9,7 @@ public:
             cnt += abs((long long)a[i] - target);
         }
         return cnt;
+
+    }
     }
 };
