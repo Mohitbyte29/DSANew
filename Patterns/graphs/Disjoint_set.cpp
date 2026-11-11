@@ -9,35 +9,46 @@ class DisjointSet{
             rank.resize(n + 1, 0);
             parent.resize(n + 1);
             size.resize(n + 1);
-            for(int i = 0; i<n; i++){
+            for(int i = 0; i <= n; i++){
                 parent[i] = i;
                 size[i] = 1;
             }
         }
 
         int findPar(int node){
-            if(node == parent[node]){
+            if(parent[node] == node){
                 return node;
             }
-            else return parent[node] = findPar(parent[node]);
+            return parent[node] = findPar(parent[node]); // ---> Path Compression
         }
 
         void unionByRank(int u, int v){
             int ult_u = findPar(u);
             int ult_v = findPar(v);
             if(ult_u == ult_v) return;
-            if(rank[ult_u] < rank[ult_v]){
+            if(rank[ult_u] > rank[ult_v]){
+                parent[ult_v] = ult_u; 
+            }
+            else if(rank[ult_u] < rank[ult_v]){
                 parent[ult_u] = ult_v;
             }
-            else if(rank[ult_v] < rank[ult_u]){
-                parent[ult_v] = ult_u;
-            }
-            else {
+            else{
                 parent[ult_v] = ult_u;
                 rank[ult_u]++;
             }
         }
-
+        int n = 7;
+        void getInfo() {
+            for(int i = 0; i <= n; i++){
+                cout << parent[i] << " ";
+            }
+            cout<<endl;
+            for(int i = 0; i <= n; i++){
+                cout<<rank[i]<<" ";
+            }
+            cout<<endl;
+        }
+    
         void unionBySize(int u, int v){
             int ult_u = findPar(u);
             int ult_v = findPar(v);
@@ -73,12 +84,13 @@ int main(){
     ds.unionByRank(6, 7); 
     ds.unionByRank(5, 6); 
     ds.unionByRank(3, 7); 
+    ds.getInfo();
 
-    
     if(ds.findPar(2) == ds.findPar(5)){
         cout<<"Same\n";
     }
     else cout<<"Not Same\n";
 
+    
     return 0;
 }
